@@ -1,0 +1,14 @@
+﻿@model Customer
+@{
+    ViewData["Title"] = ViewBag.Title + " Customer";
+}
+
+<h1>@ViewBag.Title</h1>
+<h3>@Model.FullName (@Model.CustomerID)</h3>
+
+<form asp-action="Delete" method="post" class="form-horizontal">
+    <input type="hidden" asp-for="CustomerID" />
+
+    <button type="submit" class="btn btn-danger">Delete Customer</button>
+    <a asp-controller="Customer" asp-action="List" class="btn btn-primary">Cancel</a>
+</form>

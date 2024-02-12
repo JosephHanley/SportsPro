@@ -1,0 +1,37 @@
+﻿@model Technician
+@{
+    ViewData["Title"] = ViewBag.Title + " Technician";
+}
+
+<h1>@ViewBag.Title</h1>
+
+<form asp-action="Edit" method="post" class="form-horizontal">
+
+    <div asp-validation-summary="All" class="text-danger col"></div>
+
+    <div class="row">
+        <label asp-for="Name" class="control-label col-sm-3">Name</label>
+        <input asp-for="Name" class="form-control col-sm-3" />
+    </div>
+    <div class="row">
+        <label asp-for="Email" class="control-label col-sm-3">Email</label>
+        <input asp-for="Email" class="form-control col-sm-3" />
+    </div>
+    <div class="row">
+        <label asp-for="Phone" class="control-label col-sm-3">Phone</label>
+        <input asp-for="Phone" class="form-control col-sm-3" />
+    </div>
+
+    <input type="hidden" asp-for="TechnicianID" />
+
+    <div class="row">
+        <div class="col p1-0">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a asp-action="List" class="btn btn-primary">Cancel</a>
+        </div>
+    </div>
+</form>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
